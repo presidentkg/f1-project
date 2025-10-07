@@ -6,18 +6,18 @@ export default function NavBar() {
     return (
         <nav className="w-full h-16 bg-gray-800 text-white flex items-center px-4">
             <Image src="/F1Logo.svg" alt="F1 Logo" width={100} height={40} className="mr-4" />
-            <ul className="flex space-x-4 ml-auto">
+            <ul className="flex space-x-8 ml-auto">
                 <li>
-                    <Link href="/schedule">Schedule</Link>
+                    <Link href="/schedule" className="text-xl">Schedule</Link>
                 </li>
                 <li>
-                    <Link href="/results">Results</Link>
+                    <Link href="/results" className="text-xl">Results</Link>
                 </li>
                 <li>
-                    <Link href="/drivers">Drivers</Link>
+                    <Link href="/drivers" className="text-xl">Drivers</Link>
                 </li>
                 <li>
-                    <Link href="/teams">Teams</Link>
+                    <Link href="/teams" className="text-xl">Teams</Link>
                 </li>
             </ul>
         </nav>
