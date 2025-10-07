@@ -9,15 +9,19 @@ export default function NavBar() {
             <ul className="flex space-x-8 ml-auto">
                 <li>
                     <Link href="/schedule" className="text-xl">Schedule</Link>
+                    <span className="ml-2 mr-2">▽</span>
                 </li>
                 <li>
                     <Link href="/results" className="text-xl">Results</Link>
+                    <span className="ml-2 mr-2">▽</span>
                 </li>
                 <li>
                     <Link href="/drivers" className="text-xl">Drivers</Link>
+                    <span className="ml-2 mr-2">▽</span>
                 </li>
                 <li>
                     <Link href="/teams" className="text-xl">Teams</Link>
+                    <span className="ml-2 mr-2">▽</span>
                 </li>
             </ul>
         </nav>
