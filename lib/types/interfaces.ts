@@ -13,6 +13,16 @@ export interface CurrentDriver extends Driver {
     teamId: string;
 }
 
+export interface DriversF1apiResponse {
+  api: string;
+  url: string;
+  limit: number;
+  total: number;
+  season: number;
+  championshipId: string;
+  drivers: Driver[];
+}
+
 export interface Team {
     teamId: string;
     teamName: string;
