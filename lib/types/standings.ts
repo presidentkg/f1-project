@@ -1,4 +1,5 @@
 import { Driver } from "../types/driver";
+import { Team } from "./team";
 
 export interface DriverChampionshipApiResponse {
     api: string;
@@ -19,15 +20,25 @@ export interface DriverChampionshipEntry {
     position: number;
     wins: number;
     driver: Omit<Driver, 'driverId'>;
-    team: DriverChampionshipTeamResponse;
+    team: Team;
 }
 
-export interface DriverChampionshipTeamResponse{
+export interface ConstructorsChampionshipApiResponse {
+    api: string;
+    url: string;
+    limit: number;
+    offset: number;
+    total: number;
+    season: number;
+    championshipId: string;
+    constructors_championship: ConstructorsChampionshipEntry[];
+}
+
+export interface ConstructorsChampionshipEntry {
+    classificationId: number;
     teamId: string;
-    teamName: string;
-    country: string;
-    firstAppareance: number;
-    constructorsChampionships: number;
-    driverChampionships: number;
-    url: string;    
+    points: number;
+    position: number;
+    wins: number;
+    team: Omit<Team, 'teamId'>;
 }

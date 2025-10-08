@@ -1,4 +1,4 @@
-import { Driver, DriversF1apiResponse, OpenF1Driver, OpenF1Picture } from "../types/interfaces";
+import { CurrentDriver, CurrentDriversF1apiResponse, OpenF1Driver, OpenF1Picture } from "../types/driver";
 
 
 export async function fetchDriversPhotoUrl(): Promise<OpenF1Picture[]>{
@@ -17,12 +17,12 @@ export async function fetchDriversPhotoUrl(): Promise<OpenF1Picture[]>{
     }
 }
 
-export async function fetchCurrentDrivers(): Promise<Driver[]>{
+export async function fetchCurrentDrivers(): Promise<CurrentDriver[]>{
     try{
-        const response = await fetch('https://f1connectapi.vercel.app/api/current/drivers');
+        const response = await fetch('https://f1api.dev/api/current/drivers');
         if (!response.ok)
             throw new Error("Failed to fetch driver data"); 
-        const data: DriversF1apiResponse = await response.json();
+        const data: CurrentDriversF1apiResponse = await response.json();
         return data.drivers;
     } catch(error){
         return [];

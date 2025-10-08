@@ -1,5 +1,5 @@
-import { Driver } from "../types/driver";
-import { Team } from "../types/team";
+// import { Driver } from "../types/driver";
+// import { Team } from "../types/team";
 
 export interface Circuit {
     circuitId: string;
@@ -16,20 +16,20 @@ export interface Circuit {
     url: string;
 }
 
-export interface Race {
-    raceId: string;
-    raceName: string;
-    raceDate: string;
-    raceTime: string;
-    laps: number;
-    round: number;
-    url: string;
-    fastLap: {
-        fastLapTime: string;
-        fastLapDriverId: string;
-        fastLapTeamId: string;
-    }
-    circuit: Circuit;
-    winner: Driver;
-    teamWinner: Team;
-}
+// export interface Race {
+//     raceId: string;
+//     raceName: string;
+//     raceDate: string;
+//     raceTime: string;
+//     laps: number;
+//     round: number;
+//     url: string;
+//     fastLap: {
+//         fastLapTime: string;
+//         fastLapDriverId: string;
+//         fastLapTeamId: string;
+//     }
+//     circuit: Circuit;
+//     winner: Driver;
+//     teamWinner: Team;
+// }

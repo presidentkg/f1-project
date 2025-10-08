@@ -1,9 +1,19 @@
-export interface Team {
+// export interface Team {
+//     teamId: string;
+//     teamName: string;
+//     teamNationality: string;
+//     firstAppeareance: number;
+//     constructorsChampionships: number;
+//     driverChampionships: number;
+//     url: string;
+// }
+
+export interface Team{
     teamId: string;
     teamName: string;
-    teamNationality: string;
-    firstAppeareance: number;
+    country: string;
+    firstAppareance: number;
     constructorsChampionships: number;
     driverChampionships: number;
-    url: string;
+    url: string;    
 }
