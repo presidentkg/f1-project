@@ -1,13 +1,3 @@
-// export interface Team {
-//     teamId: string;
-//     teamName: string;
-//     teamNationality: string;
-//     firstAppeareance: number;
-//     constructorsChampionships: number;
-//     driverChampionships: number;
-//     url: string;
-// }
-
 export interface Team{
     teamId: string;
     teamName: string;
@@ -16,4 +6,14 @@ export interface Team{
     constructorsChampionships: number;
     driverChampionships: number;
     url: string;    
+}
+
+export interface TeamResponseTeam {
+    teamId: string;
+    teamName: string;
+    teamNationality: string;
+    firstAppeareance: number;
+    constructorsChampionships: number;
+    driverChampionships: number;
+    url: string;
 }
