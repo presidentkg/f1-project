@@ -19,11 +19,20 @@ export interface Race {
     url: string;
     raceId: string;
     raceName: string;
-    Circuit: Circuit;
-    Results: Result[];
+    circuit: Circuit;
+    results: Result[];
 }
 
-interface Result {
+export interface RaceResults {
+    position: number;
+    number: number;
+    driver: string;
+    team: string;
+    time: string;
+    points: number;
+}
+
+export interface Result {
     position: number;
     points: number;
     grid: number;
@@ -33,3 +42,4 @@ interface Result {
     driver: Driver;
     team: LastRaceApiResponseTeam;
 }
+
