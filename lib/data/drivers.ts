@@ -1,7 +1,7 @@
 import { CurrentDriver, CurrentDriversF1apiResponse, OpenF1Driver, OpenF1Picture } from "../types/driver";
 
 
-export async function fetchDriversPhotoUrl(): Promise<OpenF1Picture[]>{
+export async function FetchDriversPhotoUrl(): Promise<OpenF1Picture[]>{
     try{
         const response = await fetch('https://api.openf1.org/v1/drivers');
         if (!response.ok)
@@ -17,7 +17,7 @@ export async function fetchDriversPhotoUrl(): Promise<OpenF1Picture[]>{
     }
 }
 
-export async function fetchCurrentDrivers(): Promise<CurrentDriver[]>{
+export async function FetchCurrentDrivers(): Promise<CurrentDriver[]>{
     try{
         const response = await fetch('https://f1api.dev/api/current/drivers');
         if (!response.ok)

@@ -1,6 +1,6 @@
-import { TeamResponseTeam } from "../types/team";
+import { TeamApiResponseTeam } from "../types/team";
 
-export async function fetchCurrentTeams(): Promise<TeamResponseTeam[]> {
+export async function FetchCurrentTeams(): Promise<TeamApiResponseTeam[]> {
     try {
         const response = await fetch('https://f1api.dev/api/current/teams');
         if (!response.ok)

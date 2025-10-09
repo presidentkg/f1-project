@@ -1,6 +1,6 @@
 import { DriverChampionshipApiResponse, DriverChampionshipEntry, ConstructorsChampionshipApiResponse, ConstructorsChampionshipEntry } from "../types/standings";
 
-export async function fetchStandingsDriversChampionship(): Promise<DriverChampionshipEntry[]>{
+export async function FetchStandingsDriversChampionship(): Promise<DriverChampionshipEntry[]>{
     try{
         const response = await fetch('https://f1api.dev/api/current/drivers-championship');
         if (!response.ok)
@@ -12,7 +12,7 @@ export async function fetchStandingsDriversChampionship(): Promise<DriverChampio
     }
 }
 
-export async function fetchStandingsConstructorsChampionship(): Promise<ConstructorsChampionshipEntry[]>{
+export async function FetchStandingsConstructorsChampionship(): Promise<ConstructorsChampionshipEntry[]>{
     try{
         const response = await fetch('https://f1api.dev/api/current/constructors-championship');
         if (!response.ok)
