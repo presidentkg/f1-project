@@ -14,14 +14,14 @@ export interface CurrentDriver extends Driver {
 }
 
 export interface CurrentDriversF1apiResponse {
-  api: string;
-  url: string;
-  limit: number;
-  offset: number;
-  total: number;
-  season: number;
-  championshipId: string;
-  drivers: CurrentDriver[];
+    api: string;
+    url: string;
+    limit: number;
+    offset: number;
+    total: number;
+    season: number;
+    championshipId: string;
+    drivers: CurrentDriver[];
 }
 
 export interface OpenF1Driver {

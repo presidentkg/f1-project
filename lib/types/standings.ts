@@ -42,3 +42,17 @@ export interface ConstructorsChampionshipEntry {
     wins: number;
     team: Omit<Team, 'teamId'>;
 }
+
+export interface DriversStandings {
+    position: number;
+    driver: string;
+    nationality: string;
+    team: string;
+    points: number;
+}
+
+export interface TeamStandings {
+    position: number;
+    team: string;
+    points: number;
+}
