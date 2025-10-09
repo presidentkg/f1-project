@@ -8,7 +8,7 @@ export interface Team{
     url: string;    
 }
 
-export interface TeamResponseTeam {
+export interface TeamApiResponseTeam {
     teamId: string;
     teamName: string;
     teamNationality: string;
@@ -16,4 +16,14 @@ export interface TeamResponseTeam {
     constructorsChampionships: number;
     driverChampionships: number;
     url: string;
+}
+
+export interface LastRaceApiResponseTeam {
+    teamId: string;
+    teamName: string;
+    nationality: string;
+    firstAppareance: number;
+    constructorsChampionships: number;
+    driverChampionships: number;
+    url: string; 
 }
