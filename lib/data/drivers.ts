@@ -1,19 +1,21 @@
-import { CurrentDriver, CurrentDriversF1apiResponse, OpenF1Driver, OpenF1Picture } from "../types/driver";
+import { CurrentDriver, CurrentDriversF1apiResponse, OpenF1Driver} from "../types/driver";
 
 
-export async function FetchDriversPhotoUrl(): Promise<OpenF1Picture[]>{
+export async function FetchDriversPhotoUrl(): Promise<{ [surname: string]: string }>{
     try{
         const response = await fetch('https://api.openf1.org/v1/drivers');
         if (!response.ok)
             throw new Error("Failed to fetch driver data");
         const allDrivers: OpenF1Driver[] = await response.json();
-        const driverPictureList: OpenF1Picture[] = allDrivers.map(driver => ({
-            headshot_url: driver.headshot_url,
-            last_name: driver.last_name
-        }));
-        return driverPictureList;
+        const driversPictureUrl: { [surname: string]: string } = {};
+        allDrivers.forEach(driver => {
+            if (driver.last_name && driver.headshot_url) {
+                driversPictureUrl[driver.last_name] = driver.headshot_url;
+            }
+        });
+        return driversPictureUrl;
     } catch(error){
-        return [];
+        return {};
     }
 }
 

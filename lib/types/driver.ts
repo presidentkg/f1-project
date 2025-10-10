@@ -43,3 +43,8 @@ export interface OpenF1Picture {
     headshot_url: string;
     last_name: string;
 }
+
+export interface DriverProps {
+    driver: CurrentDriver;
+    driverPhotoUrl: string;
+}
