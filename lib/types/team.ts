@@ -27,3 +27,13 @@ export interface LastRaceApiResponseTeam {
     driverChampionships: number;
     url: string; 
 }
+
+export interface TeamApiResponse {
+    api: string;
+    url: string;
+    limit: number;
+    offset: number;
+    total: number;
+    season: number;
+    team: TeamApiResponseTeam[];
+}
