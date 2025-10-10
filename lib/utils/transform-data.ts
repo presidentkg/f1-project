@@ -1,5 +1,6 @@
 import { Race, Result, RaceResults } from '../types/race';
 import { DriverChampionshipApiResponse, DriverChampionshipEntry, DriversStandings, ConstructorsChampionshipApiResponse, TeamStandings, ConstructorsChampionshipEntry } from '../types/standings';
+import { TeamApiResponse, TeamApiResponseTeam, Team } from '../types/team';
 
 export function RaceDataToTableData(apiRaceData: Race): RaceResults[] {
 
@@ -11,8 +12,8 @@ export function RaceDataToTableData(apiRaceData: Race): RaceResults[] {
     return results.map(result => ({
         position: result.position,
         number: result.driver.number,
-        driver: transformDriverName(`${result.driver.name} ${result.driver.surname}`),
-        team: transformTeamName(result.team.teamName),
+        driver: TransformDriverName(`${result.driver.name} ${result.driver.surname}`),
+        team: TransformTeamName(result.team.teamName),
         time: result.time,
         points: result.points, 
     }));
@@ -24,9 +25,9 @@ export function DriversStandingsDataToTableData(apiStandingsData: DriverChampion
         return [];
     return driversStandings.map(driver => ({
         position: driver.position,
-        driver: transformDriverName(`${driver.driver.name} ${driver.driver.surname}`),
+        driver: TransformDriverName(`${driver.driver.name} ${driver.driver.surname}`),
         nationality: driver.driver.nationality,
-        team: transformTeamName(driver.team.teamName),
+        team: TransformTeamName(driver.team.teamName),
         points: driver.points,
     }));
 }
@@ -37,7 +38,7 @@ export function TeamStandingsDataToTableData(apiStandingsData: ConstructorsChamp
         return [];
     return teamStandings.map(team => ({
         position: team.position,
-        team: transformTeamName(team.team.teamName),
+        team: TransformTeamName(team.team.teamName),
         points: team.points,
     }));
 }
@@ -46,13 +47,13 @@ export function UnderscoreToSpace(str: string): string {
     return str.replace(/_/g, ' ');
 }
 
-function transformDriverName(driverName: string): string {
+export function TransformDriverName(driverName: string): string {
     if (driverName === "Andrea Kimi Antonelli")
         return "Kimi Antonelli";
     return driverName;
 }
 
-function transformTeamName(teamName: string): string {
+export function TransformTeamName(teamName: string): string {
     switch (teamName) {
         case "Mercedes Formula 1 Team": 
             return "Mercedes";
@@ -74,4 +75,18 @@ function transformTeamName(teamName: string): string {
         default:
             return teamName;
     }
+}
+
+export function TransformTeamApiResponseToTeam(apiResponse: TeamApiResponse): Team | null {
+    if (!apiResponse.team || apiResponse.team.length === 0) return null;
+    const team: TeamApiResponseTeam = apiResponse.team[0];
+    return {
+        teamId: team.teamId,
+        teamName: team.teamName,
+        country: team.teamNationality,
+        firstAppareance: team.firstAppeareance,
+        constructorsChampionships: team.constructorsChampionships,
+        driverChampionships: team.driverChampionships,
+        url: team.url
+    };
 }
