@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Racing_Sans_One } from 'next/font/google';
+import { Racing_Sans_One, Russo_One } from 'next/font/google';
 import "./globals.css";
 import NavBar from "@/components/nav-bar/nav-bar";
 
@@ -7,6 +7,12 @@ const racingSansOne = Racing_Sans_One({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-racing',
+});
+
+const russoOne = Russo_One({
+    weight: '400',
+    subsets: ['latin'],
+    variable: '--font-numbers',
 });
 
 export const metadata: Metadata = {
@@ -22,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${racingSansOne.variable}`}
+        className={`${racingSansOne.variable} ${russoOne.variable}`}
       >
         <header>
           <NavBar />
