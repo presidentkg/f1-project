@@ -14,11 +14,11 @@ export default async function DriversStandingsTable() {
                 <table className="bg-slate-100 min-w-full">
                     <thead className="bg-slate-200">
                         <tr className="text-left">
-                            <th className="px-2 sm:px-4 py-2 sm:tracking-widest">POS.</th>
-                            <th className="px-2 sm:px-4 py-2 sm:tracking-widest">DRIVER</th>
-                            <th className="px-2 sm:px-4 py-2 sm:tracking-widest">NATIONALITY</th>
-                            <th className="px-2 sm:px-4 py-2 sm:tracking-widest">TEAM</th>
-                            <th className="px-2 sm:px-4 py-2 sm:tracking-widest">PTS.</th>
+                            <th className="px-2 sm:px-4 py-2 tracking-widest">POS.</th>
+                            <th className="px-2 sm:px-4 py-2 tracking-widest">DRIVER</th>
+                            <th className="px-2 sm:px-4 py-2 tracking-widest">NATIONALITY</th>
+                            <th className="px-2 sm:px-4 py-2 tracking-widest">TEAM</th>
+                            <th className="px-2 sm:px-4 py-2 tracking-widest">PTS.</th>
                         </tr>
                     </thead>
                     <tbody>
