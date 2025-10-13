@@ -1,4 +1,4 @@
-import { Race, Result, RaceResults } from '../types/race';
+import { Race, Result, RaceResults, RaceItem } from '../types/race';
 import { DriverChampionshipApiResponse, DriverChampionshipEntry, DriversStandings, ConstructorsChampionshipApiResponse, TeamStandings, ConstructorsChampionshipEntry } from '../types/standings';
 import { TeamApiResponse, TeamApiResponseTeam, Team, CurrentTeamApiResponseTeam } from '../types/team';
 
@@ -101,4 +101,10 @@ export function transformCurrentTeamApiResponseTeamToTeamApiResponseTeam(team: C
         driverChampionships: team.driversChampionships,
         url: team.url
     };
+}
+
+export function raceIdToTitle(race: RaceItem, season: number): string {
+    const baseTitle = race.raceId.replace(`_${season}`, "").replace(/_/g, ' ');
+    const capitalizedTitle = baseTitle.replace(/\b\w/g, char => char.toUpperCase());
+    return `${capitalizedTitle} Grand Prix`;
 }
