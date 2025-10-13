@@ -1,3 +1,5 @@
+import { CurrentTeamApiResponseDriver } from "./driver";
+
 export interface Team{
     teamId: string;
     teamName: string;
@@ -18,6 +20,19 @@ export interface TeamApiResponseTeam {
     url: string;
 }
 
+export interface CurrentTeamApiResponseTeam {
+    teamId: string;
+    teamName: string;
+    teamNationality: string;
+    firstAppeareance: number;
+    constructorsChampionships: number;
+    driversChampionships: number;
+    points: number;
+    position: number;
+    wins: number | null;
+    url: string;
+}
+
 export interface LastRaceApiResponseTeam {
     teamId: string;
     teamName: string;
@@ -35,5 +50,6 @@ export interface TeamApiResponse {
     offset: number;
     total: number;
     season: number;
-    team: TeamApiResponseTeam[];
+    team: CurrentTeamApiResponseTeam;
+    drivers: { driver: CurrentTeamApiResponseDriver }[];
 }
