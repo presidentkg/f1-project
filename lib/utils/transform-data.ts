@@ -1,6 +1,6 @@
 import { Race, Result, RaceResults } from '../types/race';
 import { DriverChampionshipApiResponse, DriverChampionshipEntry, DriversStandings, ConstructorsChampionshipApiResponse, TeamStandings, ConstructorsChampionshipEntry } from '../types/standings';
-import { TeamApiResponse, TeamApiResponseTeam, Team } from '../types/team';
+import { TeamApiResponse, TeamApiResponseTeam, Team, CurrentTeamApiResponseTeam } from '../types/team';
 
 export function RaceDataToTableData(apiRaceData: Race): RaceResults[] {
 
@@ -78,15 +78,27 @@ export function TransformTeamName(teamName: string): string {
 }
 
 export function TransformTeamApiResponseToTeam(apiResponse: TeamApiResponse): Team | null {
-    if (!apiResponse.team || apiResponse.team.length === 0) return null;
-    const team: TeamApiResponseTeam = apiResponse.team[0];
+    if (!apiResponse.team) return null;
+    const team = apiResponse.team;
     return {
         teamId: team.teamId,
         teamName: team.teamName,
         country: team.teamNationality,
         firstAppareance: team.firstAppeareance,
         constructorsChampionships: team.constructorsChampionships,
-        driverChampionships: team.driverChampionships,
+        driverChampionships: team.driversChampionships,
+        url: team.url
+    };
+}
+
+export function transformCurrentTeamApiResponseTeamToTeamApiResponseTeam(team: CurrentTeamApiResponseTeam): TeamApiResponseTeam {
+    return {
+        teamId: team.teamId,
+        teamName: team.teamName,
+        teamNationality: team.teamNationality,
+        firstAppeareance: team.firstAppeareance,
+        constructorsChampionships: team.constructorsChampionships,
+        driverChampionships: team.driversChampionships,
         url: team.url
     };
 }
