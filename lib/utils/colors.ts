@@ -7,11 +7,11 @@ const TEAM_COLORS: { [key: string]: string } = {
     
     'mclaren': '#FF8000', 
     
-    'aston_martin': '#00665F',
+    'aston_martin': '#229971',
     
     'alpine': '#FF87BC',
     
-    'williams': '#00A0DD',
+    'williams': '#64C4FF',
     
     'rb': '#FCD700', 
     
