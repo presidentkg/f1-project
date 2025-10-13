@@ -22,11 +22,11 @@ export default function TeamBox({ team } : {team: TeamApiResponse}) {
                         </li>
                     ))}
                 </ul>
-                <p className="text-lg font-semibold tracking-wide">Constructors Championships: {team.team.constructorsChampionships}</p>
-                <p className="text-lg font-semibold tracking-wide">Drivers Championships: {team.team.driversChampionships}</p>
                 <p className="text-lg font-semibold tracking-wide">Current points in Constructors Championships: {team.team.points}</p>
                 <p className="text-lg font-semibold tracking-wide">Current position in  Constructors Championships: {team.team.position}</p>
                 <p className="text-lg font-semibold tracking-wide">Race wins in {team.season}: {team.team.wins || 0}</p>
+                <p className="text-lg font-semibold tracking-wide">Constructors Championships: {team.team.constructorsChampionships || 0}</p>
+                <p className="text-lg font-semibold tracking-wide">Drivers Championships: {team.team.driversChampionships || 0}</p>
             </div>
             <div>
                 <TeamLogo team={transformCurrentTeamApiResponseTeamToTeamApiResponseTeam(team.team)}/>
