@@ -5,10 +5,10 @@ import TeamStandingsTable from "@/components/tables/team-standings-table";
 
 export default function Home() {
   return (
-    <section>
+    <main className="p-4 md:p-8">
       <LastRaceTable />
       <DriversStandingsTable />
       <TeamStandingsTable />
-    </section>
+    </main>
   );
 }

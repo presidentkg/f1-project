@@ -14,7 +14,7 @@ export async function FetchCurrentTeams(): Promise<TeamApiResponseTeam[] | null>
 
 export async function FetchCurrentTeamById(teamId: string): Promise<TeamApiResponse | null> {
     try {
-        const response = await fetch(`https://f1api.dev/api/current/teams/${teamId}`);
+        const response = await fetch(`https://f1api.dev/api/current/teams/${teamId}/drivers`);
         if (!response.ok)
             throw new Error("Failed to fetch team data");
         const data = await response.json();

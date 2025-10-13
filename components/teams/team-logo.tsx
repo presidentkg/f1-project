@@ -7,7 +7,7 @@ export default function TeamLogo({ team }: { team: TeamApiResponseTeam }){
 
     return(
         <div 
-            className="flex items-center justify-center shadow-md p-4"
+            className="flex items-center justify-center p-4"
             style={{ backgroundColor: teamColor }}
         >
             <img 
