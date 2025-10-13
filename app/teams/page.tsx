@@ -1,6 +1,7 @@
 import { FetchCurrentTeams } from "@/lib/data/teams";
 import { TeamApiResponseTeam } from "@/lib/types/team";
 import TeamLogo from "@/components/teams/team-logo";
+import Link from "next/link";
 
 
 export default async function Teams() {
@@ -12,7 +13,9 @@ export default async function Teams() {
     return (
         <div className="grid grid-cols-2 md:grid-cols-5 p-6">
             {teams.map((team: TeamApiResponseTeam) => (
-                <TeamLogo key={team.teamId} team={team} />
+                <Link key={team.teamId} href={`/teams/${team.teamId}`}>
+                    <TeamLogo key={team.teamId} team={team} />
+                </Link>
             ))}
         </div>
 
