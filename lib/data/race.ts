@@ -1,5 +1,5 @@
 
-import { lastRaceApiResponse, Race, RaceApiResponse, RaceItem } from "../types/race";
+import { lastRaceApiResponse, Race, RaceApiResponse, RaceItem, RaceResultsApiResponse } from "../types/race";
 
 
 export async function FetchLastRaceResult(): Promise<Race | null> {
@@ -20,6 +20,18 @@ export async function FetchCurrentSeasonRaces(): Promise<RaceApiResponse | null>
         if (!response.ok)
             throw new Error("Failed to fetch race data");
         const data : RaceApiResponse = await response.json();
+        return data;
+    } catch (error) {
+        return null;
+    }
+}
+
+export async function FetchRaceResult(season: number, round: number): Promise<RaceResultsApiResponse | null> {
+    try {
+        const response = await fetch(`https://f1api.dev/api/${season}/${round}/race`);
+        if (!response.ok)
+            throw new Error("Failed to fetch race results");
+        const data: RaceResultsApiResponse = await response.json();
         return data;
     } catch (error) {
         return null;
