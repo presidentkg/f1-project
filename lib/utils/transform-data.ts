@@ -1,13 +1,12 @@
-import { Race, Result, RaceResults, RaceItem } from '../types/race';
+import { Race, Result, RaceResults, RaceItem, RaceResultsRace } from '../types/race';
 import { DriverChampionshipApiResponse, DriverChampionshipEntry, DriversStandings, ConstructorsChampionshipApiResponse, TeamStandings, ConstructorsChampionshipEntry } from '../types/standings';
 import { TeamApiResponse, TeamApiResponseTeam, Team, CurrentTeamApiResponseTeam } from '../types/team';
 
-export function raceDataToTableData(apiRaceData: Race): RaceResults[] {
+export function raceDataToTableData(raceData: Race | RaceResultsRace): RaceResults[] {
 
-    const results: Result[] = apiRaceData.results;
+    const results: Result[] = raceData.results;
 
-    if (!results || results.length === 0)
-        return [];
+    if (!results || results.length === 0) return [];
 
     return results.map(result => ({
         position: result.position,
