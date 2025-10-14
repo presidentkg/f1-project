@@ -122,3 +122,35 @@ interface Winner {
     shortName: string;
     url: string;
 }
+
+export interface RaceResultsApiResponse {
+    api: string;
+    url: string;
+    limit: number;
+    offset: number;
+    total: number;
+    season: number;
+    races: RaceResultsRace;
+}
+
+export interface RaceResultsRace {
+    round: string;
+    date: string;
+    time: string;
+    url: string;
+    raceId: string;
+    raceName: string;
+    circuit: Circuit;
+    results: RaceResultsResult[];
+}
+
+export interface RaceResultsResult {
+    position: number;
+    points: number;
+    grid: number;
+    time: string;
+    fastLap: string | null;
+    retired: string | null;
+    driver: Driver;
+    team: LastRaceApiResponseTeam;
+}
