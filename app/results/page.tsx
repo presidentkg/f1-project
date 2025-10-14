@@ -1,6 +1,7 @@
 import TeamStandingsTable from "@/components/tables/team-standings-table";
 import DriversStandingsTable from "@/components/tables/drivers-standings-table";
 import Link from "next/link";
+import RaceResult from "@/components/race/race-result";
 
 export default async function Results({ searchParams }: { searchParams: Promise<{ results: string }> }) {
     const params = await searchParams;
@@ -30,7 +31,7 @@ export default async function Results({ searchParams }: { searchParams: Promise<
             </div>
             <div>
                 {results === "races" && (
-                    <p>Races results will be shown here.</p>
+                    <RaceResult />
                 )}
                 {results === "drivers" && (
                     <DriversStandingsTable />
