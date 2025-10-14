@@ -1,11 +1,11 @@
 import { DriverProps } from "@/lib/types/driver";
-import { TransformDriverName } from "@/lib/utils/transform-data";
+import { transformDriverName } from "@/lib/utils/transform-data";
 import { getTeamColor } from "@/lib/utils/colors";
 import { getTeamNameById } from "@/lib/utils/get-team-name-by-id";
 
 
 export default async function DriverCard({ driver, driverPhotoUrl }: DriverProps) {
-    const fullName = TransformDriverName(`${driver.name} ${driver.surname}`);
+    const fullName = transformDriverName(`${driver.name} ${driver.surname}`);
     const teamName = await getTeamNameById(driver.teamId);
     const teamColor = getTeamColor(driver.teamId);
     return (

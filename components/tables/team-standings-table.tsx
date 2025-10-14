@@ -1,12 +1,12 @@
 import { FetchStandingsConstructorsChampionship } from "@/lib/data/standings";
-import { TeamStandingsDataToTableData } from "@/lib/utils/transform-data";
+import { teamStandingsDataToTableData } from "@/lib/utils/transform-data";
 
 export default async function TeamStandingsTable() {
     const standingsData = await FetchStandingsConstructorsChampionship();
     if (!standingsData)
         return <p>Failed to load the Constructors Championship standings</p>
     const season = standingsData.season;
-    const standings = TeamStandingsDataToTableData(standingsData);
+    const standings = teamStandingsDataToTableData(standingsData);
     return (
         <section className="bg-rose-50 p-6 lg:max-w-3/4 lg:mx-auto">
             <h1 className="text-3xl font-extrabold mb-2">{season} TEAMS' STANDINGS</h1>

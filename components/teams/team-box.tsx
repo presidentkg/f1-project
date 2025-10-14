@@ -1,6 +1,6 @@
 import { TeamApiResponse } from "@/lib/types/team";
 import { getTeamColor } from "@/lib/utils/colors";
-import { TransformDriverName } from "@/lib/utils/transform-data";
+import { transformDriverName } from "@/lib/utils/transform-data";
 import TeamLogo from "./team-logo";
 import { transformCurrentTeamApiResponseTeamToTeamApiResponseTeam } from "@/lib/utils/transform-data";
 
@@ -18,7 +18,7 @@ export default function TeamBox({ team } : {team: TeamApiResponse}) {
                 <ul className="list-disc ml-6">
                     {team.drivers.map(({ driver }) => (
                         <li key={driver.driverId}>
-                            {TransformDriverName(`${driver.name} ${driver.surname}`)}
+                            {transformDriverName(`${driver.name} ${driver.surname}`)}
                         </li>
                     ))}
                 </ul>

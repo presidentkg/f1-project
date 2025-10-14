@@ -1,6 +1,6 @@
 import { FetchLastRaceResult } from "@/lib/data/race";
 import { RaceResults } from "@/lib/types/race";
-import { RaceDataToTableData, UnderscoreToSpace } from "@/lib/utils/transform-data";
+import { raceDataToTableData, underscoreToSpace } from "@/lib/utils/transform-data";
 
 
 export default async function LastRaceTable() {
@@ -10,9 +10,9 @@ export default async function LastRaceTable() {
         return <p>Failed to load latest race results</p>
     const raceName = raceData.raceName;
     const raceDate = raceData.date;
-    const circuitId = UnderscoreToSpace(raceData.circuit.circuitId).toUpperCase();
+    const circuitId = underscoreToSpace(raceData.circuit.circuitId).toUpperCase();
     const circuitName =`${raceData.circuit.circuitName}, ${circuitId}`;
-    const results : RaceResults[] = RaceDataToTableData(raceData);
+    const results : RaceResults[] = raceDataToTableData(raceData);
 
     return (
         <section className="bg-rose-50 p-6 lg:max-w-3/4 lg:mx-auto">
