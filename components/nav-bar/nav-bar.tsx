@@ -15,7 +15,7 @@ export default function NavBar() {
                 </li>
                 <li>
                     <Link href="/results" className="text-xl">Results</Link>
-                    <span className="ml-2 mr-2">▽</span>
+                    {/* <span className="ml-2 mr-2">▽</span> */}
                 </li>
                 <li>
                     <Link href="/drivers" className="text-xl">Drivers</Link>
