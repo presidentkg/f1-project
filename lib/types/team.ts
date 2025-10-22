@@ -53,3 +53,12 @@ export interface TeamApiResponse {
     team: CurrentTeamApiResponseTeam;
     drivers: { driver: CurrentTeamApiResponseDriver }[];
 }
+
+export interface SearchTeamApiResponse {
+    api: string;
+    url: string;
+    limit: number;
+    offset: number;
+    total: number;
+    teams: TeamApiResponseTeam[];
+}
