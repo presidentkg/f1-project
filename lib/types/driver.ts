@@ -54,3 +54,12 @@ export interface DriverProps {
     driver: CurrentDriver;
     driverPhotoUrl: string;
 }
+
+export interface SearchDriverApiResponse {
+    api: string;
+    url: string;
+    limit: number;
+    offset: number;
+    total: number;
+    drivers: Driver[];
+}
