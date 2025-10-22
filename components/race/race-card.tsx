@@ -10,7 +10,7 @@ export default async function RaceCard({ race, season }: { race: RaceItem, seaso
         <section>
             <div>
                 <h1 className="text-center text-8xl font-extrabold tracking-wide">{raceIdToTitle(race, season)}</h1>
-                <h2 className="text-center text-lg font-semibold tracking-wide">Round {race.round}</h2>
+                <h2 className="text-center text-lg font-semibold tracking-wide">Round {race.round}, {season}</h2>
                 <p className="text-center">{race.schedule.fp1.date} - {race.schedule.race.date} </p>
             </div>
 
