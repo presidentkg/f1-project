@@ -7,8 +7,8 @@ export default async function Schedule() {
     const races = await FetchCurrentSeasonRaces();
     if(!races || !races.races) return <p className="text-center">No race data available.</p>;
     return (
-        <section>
-            <h1 className="text-center text-8xl font-extrabold tracking-wide">Current Season Races</h1>
+        <main className="p-4 md:p-8">
+            <h1 className="text-center text-8xl font-extrabold mb-8 tracking-wide">Current Season Races</h1>
             {races ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-2">
                     {races.races.map((race) => (
@@ -20,6 +20,6 @@ export default async function Schedule() {
             ) : (
                 <p>No races found.</p>
             )}
-        </section>
+        </main>
     )
 }

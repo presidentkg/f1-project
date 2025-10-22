@@ -13,7 +13,7 @@ export default async function Drivers() {
         return <p className="text-center">No drivers data available.</p>;
     return (
         <main className="p-4 md:p-8">
-            <h1 className="text-4xl font-extrabold mb-8 text-center">F1 DRIVERS 2025</h1>
+            <h1 className="text-8xl font-extrabold mb-8 text-center tracking-wide">F1 DRIVERS 2025</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {drivers.map((driver: CurrentDriver) => {
                     const driverPhotoUrl = driversPhotoUrls[driver.surname] || '/F1Logo.svg';
