@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SearchBar from "../search-bar/search-bar";
 
 
 export default function NavBar() {
@@ -8,6 +9,7 @@ export default function NavBar() {
             <Link href="/">
                 <Image src="/F1Logo.svg" alt="F1 Logo" width={100} height={40} className="mr-4" />
             </Link>
+            <SearchBar />
             <ul className="flex space-x-20 ml-auto mr-auto">
                 <li>
                     <Link href="/schedule" className="text-xl">Schedule</Link>

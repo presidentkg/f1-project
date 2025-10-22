@@ -1,4 +1,4 @@
-import { CurrentDriver, CurrentDriversF1apiResponse, OpenF1Driver} from "../types/driver";
+import { CurrentDriver, CurrentDriversF1apiResponse, Driver, OpenF1Driver, SearchDriverApiResponse} from "../types/driver";
 
 
 export async function FetchDriversPhotoUrl(): Promise<{ [surname: string]: string }>{
@@ -31,3 +31,14 @@ export async function FetchCurrentDrivers(): Promise<CurrentDriver[]>{
     }
 }
 
+export async function SearchDrivers(query: string): Promise<Driver[]> {
+    try {
+        const response = await fetch(`https://f1api.dev/api/drivers/search?q=${query}`);
+        if (!response.ok)
+            throw new Error("Failed to fetch driver");
+        const data: SearchDriverApiResponse = await response.json();
+        return data.drivers;
+    } catch (error) {
+        return [];
+    }
+}

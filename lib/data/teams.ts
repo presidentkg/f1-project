@@ -1,6 +1,6 @@
-import { TeamApiResponse, TeamApiResponseTeam } from "../types/team";
+import { SearchTeamApiResponse, TeamApiResponse, TeamApiResponseTeam } from "../types/team";
 
-export async function FetchCurrentTeams(): Promise<TeamApiResponseTeam[] | null> {
+export async function FetchCurrentTeams(): Promise<TeamApiResponseTeam[]> {
     try {
         const response = await fetch('https://f1api.dev/api/current/teams');
         if (!response.ok)
@@ -8,7 +8,7 @@ export async function FetchCurrentTeams(): Promise<TeamApiResponseTeam[] | null>
         const data = await response.json();
         return data.teams;
     } catch (error) {
-        return null;
+        return [];
     }
 }
 
@@ -21,5 +21,17 @@ export async function FetchCurrentTeamById(teamId: string): Promise<TeamApiRespo
         return data;
     } catch (error) {
         return null;
+    }
+}
+
+export async function SearchTeams(query: string): Promise<TeamApiResponseTeam[]> {
+    try {
+        const response = await fetch(`https://f1api.dev/api/teams/search?q=${query}`);
+        if (!response.ok)
+            throw new Error("Failed to fetch team");
+        const data: SearchTeamApiResponse = await response.json();
+        return data.teams;
+    } catch (error) {
+        return [];
     }
 }
