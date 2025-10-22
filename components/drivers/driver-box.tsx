@@ -1,19 +1,16 @@
 import { DriverProps } from "@/lib/types/driver";
 import { transformDriverName } from "@/lib/utils/transform-data";
-import { getTeamColor } from "@/lib/utils/colors";
 import { getTeamNameById } from "@/lib/utils/get-team-name-by-id";
 import { getDriverStats } from "@/lib/utils/get-driver-stats";
 
 export default async function DriverBox({ driver, driverPhotoUrl }: DriverProps) {
     const fullName = transformDriverName(`${driver.name} ${driver.surname}`);
     const teamName = await getTeamNameById(driver.teamId);
-    const teamColor = getTeamColor(driver.teamId);
     const stats = await getDriverStats(driver);
 
     return (
         <section 
-            className="max-w-xl w-full mx-auto p-[2rem] rounded-2xl shadow-2xl flex flex-col md:flex-row justify-between items-center gap-[2rem] border border-black overflow-hidden"
-            style={{ backgroundColor: teamColor }}
+            className="max-w-xl w-full mx-auto p-[2rem] rounded-2xl shadow-2xl flex flex-col md:flex-row justify-between items-center gap-[2rem] border border-black overflow-hidden bg-white"
         >
             <div>
                 <h1 className="text-2xl font-extrabold tracking-wide">{fullName} - {driver.shortName}</h1>
