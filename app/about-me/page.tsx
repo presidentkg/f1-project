@@ -1,5 +1,3 @@
-
-
 export default function AboutMe() {
   return (
     <main className="p-6 md:p-12 max-w-4xl mx-auto">
