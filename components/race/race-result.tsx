@@ -26,20 +26,7 @@ export default function RaceResult() {
         tableContent = <p className="text-center">No results found for this race.</p>;
     } else {
         const raceData = raceResult.races;
-        const raceName = raceData.raceName;
-        const raceDate = raceData.date;
-        const circuitId = underscoreToSpace(raceData.circuit.circuitId).toUpperCase();
-        const circuitName = `${raceData.circuit.circuitName}, ${circuitId}`;
-        const results = raceDataToTableData(raceData);
-
-        tableContent = (
-            <RaceResultsTable
-                results={results}
-                raceName={raceName}
-                raceDate={raceDate}
-                circuitName={circuitName}
-            />
-        );
+        tableContent = ( <RaceResultsTable raceData={raceData} /> );
     }
     return (
         <section>

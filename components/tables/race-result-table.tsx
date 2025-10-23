@@ -1,24 +1,17 @@
-import { RaceResults } from "@/lib/types/race";
+import { RaceResultsRace } from "@/lib/types/race";
+import { raceDataToTableData, underscoreToSpace } from "@/lib/utils/transform-data";
 
-export default function RaceResultsTable({
-    results,
-    title,
-    raceName,
-    raceDate,
-    circuitName,
-}: {
-    results: RaceResults[];
-    title?: string;
-    raceName?: string;
-    raceDate?: string;
-    circuitName?: string;
-}) {
+export default function RaceResultsTable({ raceData }: { raceData: RaceResultsRace }) {
+    const raceName = raceData.raceName;
+    const raceDate = raceData.date;
+    const circuitId = underscoreToSpace(raceData.circuit.circuitId).toUpperCase();
+    const circuitName = `${raceData.circuit.circuitName}, ${circuitId}`;
+    const results = raceDataToTableData(raceData);
     return (
-        <section className="bg-rose-50 p-6 lg:max-w-3/4 lg:mx-auto">
-            {title && <h1 className="text-3xl font-extrabold mb-2">{title}</h1>}
-            {raceName && <h2 className="text-2xl font-bold uppercase">{raceName}</h2>}
-            {raceDate && <h3 className="text-lg font-semibold">{raceDate}</h3>}
-            {circuitName && <h4 className="text-sm font-light mb-6">{circuitName}</h4>}
+        <section className="p-6 lg:max-w-3/4 lg:mx-auto">
+            {raceName && <h1 className="text-2xl lg:text-4xl font-bold uppercase text-center">{raceName}</h1>}
+            {raceDate && <h2 className="text-lg lg:text-2xl font-semibold text-center">{raceDate}</h2>}
+            {circuitName && <h3 className="text-sm lg:text-lg font-light mb-6 text-center">{circuitName}</h3>}
             <div className="overflow-x-auto">
                 <table className="bg-slate-100 min-w-full">
                     <thead className="bg-slate-200">
