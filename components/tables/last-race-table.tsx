@@ -1,5 +1,4 @@
 import { FetchLastRaceResult } from "@/lib/data/race";
-import { RaceResults } from "@/lib/types/race";
 import { raceDataToTableData, underscoreToSpace } from "@/lib/utils/transform-data";
 import RaceResultsTable from "./race-result-table";
 
