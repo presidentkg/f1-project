@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Racing_Sans_One, Russo_One } from 'next/font/google';
 import "./globals.css";
 import NavBar from "@/components/nav-bar/nav-bar";
+import Footer from "@/components/footer/footer";
 
 const racingSansOne = Racing_Sans_One({
   weight: '400',
@@ -28,12 +29,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${racingSansOne.variable} ${russoOne.variable}`}
+        className={`${racingSansOne.variable} ${russoOne.variable} min-h-screen flex flex-col`}
       >
         <header>
           <NavBar />
         </header>
-        {children}
+        <main className="flex-1">
+          {children}
+        </main>
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );
