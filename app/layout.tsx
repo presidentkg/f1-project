@@ -3,6 +3,7 @@ import { Racing_Sans_One, Russo_One } from 'next/font/google';
 import "./globals.css";
 import NavBar from "@/components/nav-bar/nav-bar";
 import Footer from "@/components/footer/footer";
+import { Suspense } from "react";
 
 const racingSansOne = Racing_Sans_One({
   weight: '400',
@@ -32,7 +33,9 @@ export default function RootLayout({
         className={`${racingSansOne.variable} ${russoOne.variable} min-h-screen flex flex-col`}
       >
         <header>
-          <NavBar />
+          <Suspense fallback={<div>Loading...</div>}>
+            <NavBar />
+          </Suspense>
         </header>
         <main className="flex-1">
           {children}
