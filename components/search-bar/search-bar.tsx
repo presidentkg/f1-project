@@ -21,7 +21,7 @@ export default function SearchBar(){
     }
 
     return(
-        <div className="flex items-center w-60 md:w-80 lg:w-full rounded-lg shadow-md">
+        <div className="flex items-center w-60 md:w-80 rounded-lg shadow-md">
             <div className="flex items-center w-full max-w-md mx-auto rounded-lg shadow-md">
                 <form onSubmit={handleClick} className="flex w-full items-center overflow-hidden rounded-lg">
                     <input
