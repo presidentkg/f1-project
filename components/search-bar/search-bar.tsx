@@ -29,7 +29,7 @@ export default function SearchBar(){
                     type="search"
                     placeholder="Search..."
                     aria-label="search"
-                    className="flex-grow rounded-l-full text-gray-700 focus:outline-none px-4 bg-white"
+                    className="flex-grow rounded-full text-gray-700 focus:outline-none px-4 bg-white"
                     name="query"
                     />
                     <button
