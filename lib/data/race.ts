@@ -1,5 +1,5 @@
 
-import { lastRaceApiResponse, Race, RaceApiResponse, RaceItem, RaceResultsApiResponse } from "../types/race";
+import { lastRaceApiResponse, Race, RaceApiResponse, RaceResultsApiResponse } from "../types/race";
 
 
 export async function FetchLastRaceResult(): Promise<Race | null> {
@@ -10,6 +10,7 @@ export async function FetchLastRaceResult(): Promise<Race | null> {
         const data : lastRaceApiResponse = await response.json();
         return data.races;
     } catch (error) {
+        console.error("Error fetching last race result:", error);
         return null;
     }
 }
@@ -22,6 +23,7 @@ export async function FetchCurrentSeasonRaces(): Promise<RaceApiResponse | null>
         const data : RaceApiResponse = await response.json();
         return data;
     } catch (error) {
+        console.error("Error fetching current season races:", error);
         return null;
     }
 }
@@ -34,6 +36,7 @@ export async function FetchRaceResult(season: number, round: number): Promise<Ra
         const data: RaceResultsApiResponse = await response.json();
         return data;
     } catch (error) {
+        console.error("Error fetching race results:", error);
         return null;
     }
 }

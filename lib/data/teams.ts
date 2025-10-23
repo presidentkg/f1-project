@@ -8,6 +8,7 @@ export async function FetchCurrentTeams(): Promise<TeamApiResponseTeam[]> {
         const data = await response.json();
         return data.teams;
     } catch (error) {
+        console.error("Error fetching current teams:", error);
         return [];
     }
 }
@@ -20,6 +21,7 @@ export async function FetchCurrentTeamById(teamId: string): Promise<TeamApiRespo
         const data = await response.json();
         return data;
     } catch (error) {
+        console.error("Error fetching current team by ID:", error);
         return null;
     }
 }
@@ -32,6 +34,7 @@ export async function SearchTeams(query: string): Promise<TeamApiResponseTeam[]>
         const data: SearchTeamApiResponse = await response.json();
         return data.teams;
     } catch (error) {
+        console.error("Error searching teams:", error);
         return [];
     }
 }

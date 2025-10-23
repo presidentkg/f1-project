@@ -15,6 +15,7 @@ export async function FetchDriversPhotoUrl(): Promise<{ [surname: string]: strin
         });
         return driversPictureUrl;
     } catch(error){
+        console.error("Error fetching Driver photo url:", error);
         return {};
     }
 }
@@ -27,6 +28,7 @@ export async function FetchCurrentDrivers(): Promise<CurrentDriver[]>{
         const data: CurrentDriversF1apiResponse = await response.json();
         return data.drivers;
     } catch(error){
+        console.error("Error fetching current drivers:", error);
         return [];
     }
 }
@@ -39,6 +41,7 @@ export async function SearchDrivers(query: string): Promise<Driver[]> {
         const data: SearchDriverApiResponse = await response.json();
         return data.drivers;
     } catch (error) {
+        console.error("Error searching drivers:", error);
         return [];
     }
 }
