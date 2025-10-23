@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FormEvent } from "react";
 
@@ -23,15 +24,20 @@ export default function SearchBar(){
     return(
         <div className="flex items-center w-60 md:w-80 rounded-lg shadow-md">
             <div className="flex items-center w-full max-w-md mx-auto rounded-lg shadow-md">
-                <form onSubmit={handleClick} className="flex w-full items-center overflow-hidden rounded-lg">
+                <form onSubmit={handleClick} className="flex w-full items-center overflow-hidden rounded-lg" aria-label="Site search">
                     <input
                     type="search"
                     placeholder="Search..."
+                    aria-label="search"
                     className="flex-grow rounded-l-full text-gray-700 focus:outline-none px-4 bg-white"
                     name="query"
                     />
-                    <button className="flex items-center justify-center h-10 w-10 m-2 rounded-lg lg:bg-blue-400 lg:hover:bg-blue-500 transition-colors">
-                        <img
+                    <button
+                        type="submit" 
+                        className="flex items-center justify-center h-10 w-10 m-2 rounded-lg lg:bg-blue-400 lg:hover:bg-blue-500 transition-colors"
+                        aria-label="Submit search"
+                    >
+                        <Image
                         src="/Search.svg"
                         alt="Search icon"
                         width={20}
