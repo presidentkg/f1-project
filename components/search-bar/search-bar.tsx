@@ -21,7 +21,7 @@ export default function SearchBar(){
     }
 
     return(
-        <div className="flex items-center w-full rounded-lg shadow-md">
+        <div className="flex items-center w-60 md:w-80 lg:w-full rounded-lg shadow-md">
             <div className="flex items-center w-full max-w-md mx-auto rounded-lg shadow-md">
                 <form onSubmit={handleClick} className="flex w-full items-center overflow-hidden rounded-lg">
                     <input
@@ -30,7 +30,7 @@ export default function SearchBar(){
                     className="flex-grow rounded-l-full text-gray-700 focus:outline-none px-4 bg-white"
                     name="query"
                     />
-                    <button className="flex items-center justify-center h-10 w-10 m-2 rounded-lg bg-blue-400 hover:bg-blue-500 transition-colors">
+                    <button className="flex items-center justify-center h-10 w-10 m-2 rounded-lg lg:bg-blue-400 lg:hover:bg-blue-500 transition-colors">
                         <img
                         src="/Search.svg"
                         alt="Search icon"
