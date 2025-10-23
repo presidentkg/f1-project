@@ -1,4 +1,4 @@
-import { DriverChampionshipApiResponse, DriverChampionshipEntry, ConstructorsChampionshipApiResponse, ConstructorsChampionshipEntry } from "../types/standings";
+import { DriverChampionshipApiResponse, ConstructorsChampionshipApiResponse } from "../types/standings";
 
 export async function FetchStandingsDriversChampionship(): Promise<DriverChampionshipApiResponse | null>{
     try{
@@ -8,6 +8,7 @@ export async function FetchStandingsDriversChampionship(): Promise<DriverChampio
         const data: DriverChampionshipApiResponse = await response.json();
         return data;
     } catch(error){
+        console.error("Error fetching Driver Championship data:", error);
         return null;
     }
 }
@@ -20,6 +21,7 @@ export async function FetchStandingsConstructorsChampionship(): Promise<Construc
         const data: ConstructorsChampionshipApiResponse = await response.json();
         return data;
     } catch(error){
+        console.error("Error fetching Constructors Championship data:", error);
         return null;
     }
 }

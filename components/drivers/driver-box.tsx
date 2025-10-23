@@ -2,6 +2,7 @@ import { DriverProps } from "@/lib/types/driver";
 import { transformDriverName } from "@/lib/utils/transform-data";
 import { getTeamNameById } from "@/lib/utils/get-team-name-by-id";
 import { getDriverStats } from "@/lib/utils/get-driver-stats";
+import Image from "next/image";
 
 export default async function DriverBox({ driver, driverPhotoUrl }: DriverProps) {
     const fullName = transformDriverName(`${driver.name} ${driver.surname}`);
@@ -31,7 +32,7 @@ export default async function DriverBox({ driver, driverPhotoUrl }: DriverProps)
                 <p className="text-lg font-semibold tracking-wide">Birthday: {driver.birthday}</p>
             </div>
             <div className="w-50 h-50 flex items-center justify-center flex-shrink-0">
-                <img 
+                <Image 
                     src={driverPhotoUrl}
                     alt="Photo missing"
                     className="w-full h-full rounded-full border-4 border-black shadow-md"

@@ -2,6 +2,7 @@ import { DriverProps } from "@/lib/types/driver";
 import { transformDriverName } from "@/lib/utils/transform-data";
 import { getTeamColor } from "@/lib/utils/colors";
 import { getTeamNameById } from "@/lib/utils/get-team-name-by-id";
+import Image from "next/image";
 
 
 export default async function DriverCard({ driver, driverPhotoUrl }: DriverProps) {
@@ -21,7 +22,7 @@ export default async function DriverCard({ driver, driverPhotoUrl }: DriverProps
             </div>
             <div className="md:w-1/2 flex justify-center items-center">
                 <div className="w-25 h-25 flex items-center justify-center flex-shrink-0">
-                    <img 
+                    <Image 
                         src={driverPhotoUrl}
                         alt="Photo missing"
                         className="w-full h-full rounded-full border-4 border-black shadow-md"

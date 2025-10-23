@@ -31,7 +31,7 @@ export default async function Search({
     const searchResults = drivers.length > 0 || teams.length > 0;
     return (
         <main className="max-w-4xl mx-auto p-8">
-            <h1 className="text-3xl font-bold mb-6">Search Results for "{query}"</h1>
+            <h1 className="text-3xl font-bold mb-6">Search Results for &quot;{query}&quot;</h1>
 
             {!query && (
                 <p className="text-sm text-slate-500 mb-6">Enter a search term</p>
