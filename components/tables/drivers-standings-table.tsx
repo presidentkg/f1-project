@@ -9,7 +9,7 @@ export default async function DriversStandingsTable() {
     const standings = driversStandingsDataToTableData(standingsData);
     return (
         <section className="bg-rose-50 p-6 lg:max-w-3/4 lg:mx-auto">
-            <h1 className="text-3xl font-extrabold mb-2">{season} DRIVERS' STANDINGS</h1>
+            <h1 className="text-3xl font-extrabold mb-2">{season} DRIVERS&apos; STANDINGS</h1>
             <div className="overflow-x-auto">
                 <table className="bg-slate-100 min-w-full">
                     <thead className="bg-slate-200">
