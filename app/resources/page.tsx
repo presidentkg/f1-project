@@ -2,7 +2,7 @@ export default function Resources() {
     return (
         <main className="p-6 md:p-12 max-w-4xl mx-auto">
             <section className="mt-8 text-center">
-                <h1 className="text-8xl font-extrabold text-slate-900 underline tracking-wide">Resources</h1>
+                <h1 className="text-2xl lg:text-8xl font-extrabold text-slate-900 underline tracking-wide">Resources</h1>
                 <p className="mt-8 text-lg text-slate-700">Here are the main websites and APIs I used to build this project:</p>
                 <ul className="mt-4 text-base text-slate-600">
                     <li><a className="text-blue-600 hover:underline" href="https://www.formula1.com/" target="_blank" rel="noopener noreferrer">Official Formula 1 Website</a> - design reference</li>
