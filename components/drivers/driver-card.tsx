@@ -11,7 +11,7 @@ export default async function DriverCard({ driver, driverPhotoUrl }: DriverProps
     const teamColor = getTeamColor(driver.teamId);
     return (
         <section
-            className="h-full min-h-[200px] p-6 rounded-xl shadow-lg flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-8 border-1 border-black overflow-hidden"
+            className="h-full min-h-[12.5rem] p-6 rounded-xl shadow-lg flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-8 border-1 border-black overflow-hidden"
             style={{ backgroundColor: teamColor }}
         >
             <div className="flex flex-col space-y-1 md:w-1/2 text-center md:text-left">
@@ -21,11 +21,13 @@ export default async function DriverCard({ driver, driverPhotoUrl }: DriverProps
                 <p className="text-sm">{driver.nationality}</p>
             </div>
             <div className="md:w-1/2 flex justify-center items-center">
-                <div className="w-25 h-25 flex items-center justify-center flex-shrink-0">
+                <div className="w-[5.8125rem] h-[5.8125rem] flex items-center justify-center flex-shrink-0">
                     <Image 
                         src={driverPhotoUrl}
-                        alt="Photo missing"
-                        className="w-full h-full rounded-full border-4 border-black shadow-md"
+                        alt={`${fullName} photo`}
+                        width={93}
+                        height={93}
+                        quality={100} 
                     />
                 </div>
             </div>

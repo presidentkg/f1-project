@@ -15,6 +15,8 @@ export default function TeamLogo({ team }: { team: TeamApiResponseTeam }){
                 src={`/team-logo/${teamId}.svg`} 
                 alt={`${team.teamName} logo`} 
                 className="w-40 h-40 object-contain"
+                width={160}
+                height={160}
             />
         </div>
     )

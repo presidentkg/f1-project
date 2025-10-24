@@ -31,11 +31,13 @@ export default async function DriverBox({ driver, driverPhotoUrl }: DriverProps)
                 )}
                 <p className="text-lg font-semibold tracking-wide">Birthday: {driver.birthday}</p>
             </div>
-            <div className="w-50 h-50 flex items-center justify-center flex-shrink-0">
+            <div className="w-[5.8125rem] h-[5.8125rem] flex items-center justify-center flex-shrink-0">
                 <Image 
                     src={driverPhotoUrl}
-                    alt="Photo missing"
-                    className="w-full h-full rounded-full border-4 border-black shadow-md"
+                    alt={`${fullName} photo`}
+                    width={93}
+                    height={93}
+                    quality={100} 
                 />
             </div>
         </section>
