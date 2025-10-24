@@ -9,8 +9,10 @@ export default function NavBar() {
             <Link href="/" className="flex-shrink-0 mt-2 lg:mt-0">
                 <Image src="/F1Logo.svg" alt="F1 Logo" width={100} height={40} className="mr-4" />
             </Link>
-            <SearchBar />
-            <ul className="flex space-x-5 lg:space-x-10 ml-auto mr-auto">
+            <div className="ml-auto mr-auto">
+                <SearchBar />
+            </div>
+            <ul className="flex space-x-5 lg:space-x-10 ml-auto">
                 <li>
                     <Link href="/schedule" className="lg:text-xl">Schedule</Link>
                     {/* <span className="ml-2 mr-2">▽</span> */}
