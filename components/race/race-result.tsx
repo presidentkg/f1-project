@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import RaceMenu from "@/components/race/race-menu";
 import { FetchRaceResult } from "@/lib/data/race";
 import { RaceResultsApiResponse } from "@/lib/types/race";
-import { raceDataToTableData, underscoreToSpace } from "@/lib/utils/transform-data";
 import RaceResultsTable from "../tables/race-result-table";
 
 export default function RaceResult() {

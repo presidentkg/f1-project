@@ -1,7 +1,6 @@
 import { FetchRaceResult } from "@/lib/data/race";
 import { RaceItem, RaceResultsRace } from "@/lib/types/race";
-import { raceIdToTitle, transformDriverName, transformTimeToLocal } from "@/lib/utils/transform-data";
-import RaceResult from "./race-result";
+import { transformTimeToLocal } from "@/lib/utils/transform-data";
 import RaceResultsTable from "../tables/race-result-table";
 
 
