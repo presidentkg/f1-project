@@ -14,6 +14,10 @@ export default function NavBar() {
             </div>
             <ul className="flex space-x-5 lg:space-x-10 ml-auto">
                 <li>
+                    <Link href="/news" className="lg:text-xl">News</Link>
+                    {/* <span className="ml-2 mr-2">▽</span> */}
+                </li>
+                <li>
                     <Link href="/schedule" className="lg:text-xl">Schedule</Link>
                     {/* <span className="ml-2 mr-2">▽</span> */}
                 </li>
