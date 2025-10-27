@@ -1,3 +1,5 @@
+import NewsFeed from "@/components/news/news-feed";
+
 export default function Home() {
   return (
     <main className="p-6 md:p-12 mx-auto">
@@ -6,6 +8,7 @@ export default function Home() {
         <p className="mt-8 text-lg text-slate-700">Welcome to the F1 Info Hub, your go-to source for all things Formula 1.</p>
         <p className="mt-4 mb-8 text-base text-slate-600">Here you can find race schedules and results, read driver and team profiles, and view up-to-date driver and constructor standings.</p>
       </section>
+      <NewsFeed />
     </main>
   );
 }
