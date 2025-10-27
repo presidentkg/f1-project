@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ F1 Info Hub — Portfolio Project
 
-## Getting Started
+This project was carried out over 3 weeks. The goal was to make a portfolio project to demonstrate to future employers the skills I acquired during the course. I chose to created a website to showcase Formula 1 information and statistics. I utilized GitHub Projects to structure and plan the work. The site fetches data primarly from [f1api.dev](https://f1api.dev/).
 
-First, run the development server:
+---
 
+## 📑 Table of Contents
+- 📖 [About the Project](#-about-the-project)
+- ✨ [Features](#-features)
+- 🛠 [Technologies](#-technologies)
+- ⚙️ [Installation](#-installation)
+- 🚀 [Usage](#-usage)
+- 📂 [Project Structure](#-project-structure)
+- 📈 [Workflow](#-workflow)
+- 📚 [Lessons Learned](#-lessons-learned)
+- ✍️ [Contact](#-contact)
+
+
+---
+
+## 📖 About the Project
+This was an individual project with the goal of demonstrating the skills I acquired during the course.
+Basic requirements:
+- Front-end project using Next.js (or an alternative).
+- Must follow a predefined design mockup (can be extended later if desired).
+- Use GitHub Projects or similar for sprint tracking.
+- Work in feature branches merged via pull requests.
+- Clear commit messages that instructors can follow.
+- "Scrum"-like workflow.
+- (Deployment to Vercel or similar is optional.)
+
+---
+
+## ✨ Features
+- ✅ Homepage with basic info about project
+- ✅ Schedule page
+- ✅ Results page with possibility to see race, driver and team results
+- ✅ Drivers page
+- ✅ Teams page
+- ✅ Search bar
+- ✅ About me page
+- ✅ Resources page with links
+
+---
+
+## 🛠 Technologies
+- [Next.js 15 (App Router)](https://nextjs.org/)
+- [WAVE](https://wave.webaim.org/)
+- [Primary API](https://f1api.dev/)
+- [Secondary API](https://openf1.org/)
+
+---
+
+## ⚙️ Installation
 ```bash
+# Clone the repository
+git clone https://github.com/presidentkg/f1-project
+
+# Navigate to the project directory
+cd f1-project
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Usage
+* Homepage -> static page with basic info about project
+* Schedule page -> list of races this season
+* Drivers page -> list of drivers this season
+* Teams page -> list of teams this season
+* Search bar -> search for drivers and teams, both current and former
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📂 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+|-- app/
+|  |-- page.tsx            # Home page
+|  |-- about-me/page.tsx   # About me
+|  |-- resources/page.tsx  # Resources
+|  |-- results/page.tsx    # Results
+|  |-- schedule/page.tsx   # Schedule
+|  |-- search/page.tsx     # Search
+|  |-- teams/page.tsx      # Teams
+|-- components/            # Reusable components   
+|-- lib/data               # Data fetching
+|-- lib/types              # Types        
+|-- lib/utils              # Utils
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📈 Workflow
 
-## Deploy on Vercel
+* 👥 Individual work in agile sprints (SCRUM)
+* 📑 GitHub Projects (Kanban board)
+* 🌱 Feature branches
+* 🔍 PR + code review
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📚 Lessons Learned
+
+* Integrate an API with many endpoints that returned slightly different shapes for the same logical objects 
+* The difference between Server & Client Components in Next.js
+* Agile work methods
+* Responsiveness with Tailwind
+* Reusable Components
+* Git workflows - feature branches, PRs and sprint tracking with GitHub Projects.
+
+---
+
+## ✍️ Contact
+
+👤 Karl Ragnar
+🔗[presidentkg](https://github.com/presidentkg)
+🔗[LinkedIn](https://www.linkedin.com/in/karlragnar-kling/)
