@@ -11,6 +11,7 @@ export default function Resources() {
                     <li><a className="text-blue-600 hover:underline" href="https://docs.fastf1.dev/plotting_colormaps.html#team-colormaps-overview" target="_blank" rel="noopener noreferrer">FastF1</a> - team colormap</li>
                     <li><a className="text-blue-600 hover:underline" href="https://fonts.google.com/specimen/Racing+Sans+One" target="_blank" rel="noopener noreferrer">Google Fonts</a> - font</li>
                     <li><a className="text-blue-600 hover:underline" href="https://commons.wikimedia.org/wiki/Main_Page" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> - images included as local assets</li>
+                    <li><a className="text-blue-600 hover:underline" href="https://www.formula1.com/en/latest/all.xml" target="_blank" rel="noopener noreferrer">Formula 1 News RSS Feed</a> - news articles</li>
                 </ul>
             </section>
         </main>
