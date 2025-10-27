@@ -39,7 +39,7 @@ export default function Footer() {
 
             <Link href="https://www.linkedin.com/in/karlragnar-kling/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-white">
                 <Image
-                    src="/linkedin.svg"
+                    src="/linkedIn.svg"
                     alt="LinkedIn Logo"
                     width={40}
                     height={40}
