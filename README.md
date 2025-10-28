@@ -13,6 +13,7 @@ This project was carried out over 3 weeks. The goal was to make a portfolio proj
 - 📂 [Project Structure](#-project-structure)
 - 📈 [Workflow](#-workflow)
 - 📚 [Lessons Learned](#-lessons-learned)
+- 🌱 [Future Development](#-future-development)
 - ✍️ [Contact](#-contact)
 
 
@@ -113,6 +114,16 @@ npm run dev
 * Responsiveness with Tailwind
 * Reusable Components
 * Git workflows - feature branches, PRs and sprint tracking with GitHub Projects.
+
+---
+
+## 🌱 Future Development
+
+* More detailed data on driver and team cards.  
+* Add a dropdown menu for the navigation bar.  
+* Create circuit pages with detailed info (layout, lap record, etc).  
+* Add a year/season filter to view results from previous seasons.  
+* Integrate more OpenF1 data — e.g. graphs for a driver's position over a race, air/track temperature, stint analysis, tyre strategies, etc.
 
 ---
 
